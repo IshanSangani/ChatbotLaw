@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt --default-timeout=100 future
 COPY . .
 
 # Expose the port that Streamlit will run on
-
+$PORT
 
 # Command to run your Streamlit application
 CMD ["streamlit", "run", "chatbot_app.py"]
