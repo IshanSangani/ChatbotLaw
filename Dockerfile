@@ -13,5 +13,8 @@ RUN pip install -r requirements.txt --default-timeout=100 future
 # Copy the rest of the application files to the container's working directory
 COPY . .
 
+# Expose the port that Streamlit will run on
+EXPOSE 8501
+
 # Command to run your Streamlit application
 CMD ["streamlit", "run", "chatbot_app.py"]
