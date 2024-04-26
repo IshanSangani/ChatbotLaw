@@ -110,6 +110,9 @@ def display_conversation(history):
         message(history["generated"][i],key=str(i))
 
 def main():
+    port = int(os.environ.get('PORT', 8501))
+    st.set_page_config(layout="wide")
+
     st.markdown("<h1 style='text-align: center; color: blue;'>Chat with your PDF 🦜📄 </h1>", unsafe_allow_html=True)
     
     st.markdown("<h2 style='text-align: center; color:red;'>Upload your PDF 👇</h2>", unsafe_allow_html=True)
@@ -158,7 +161,7 @@ def main():
             if st.session_state["generated"]:
                 display_conversation(st.session_state)
         
-
+            st.run(port=port)
         
 
 
